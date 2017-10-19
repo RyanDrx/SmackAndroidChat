@@ -56,25 +56,20 @@ class CreateUserActivity : AppCompatActivity() {
     }
 
     fun createUserButtonClicked(view: View) {
-
         enableSpinner(true)
-
         val userName = createUserNameText.text.toString()
-        val password = createPasswordText.text.toString()
         val email = createEmailText.text.toString()
+        val password = createPasswordText.text.toString()
 
         if (userName.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
             AuthService.registerUser(email, password) { registerSuccess ->
-
                 if (registerSuccess) {
                     AuthService.loginUser(email, password) { loginSuccess ->
                         if (loginSuccess) {
                             AuthService.createUser(userName, email, userAvatar, avatarColor) { createSuccess ->
                                 if (createSuccess) {
-
                                     val userDataChange = Intent(BROADCAST_USER_DATA_CHANGE)
                                     LocalBroadcastManager.getInstance(this).sendBroadcast(userDataChange)
-
                                     enableSpinner(false)
                                     finish()
                                 } else {
@@ -90,11 +85,10 @@ class CreateUserActivity : AppCompatActivity() {
                 }
             }
         } else {
-            Toast.makeText(this, "Make sure user name email and password are filled in. ", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Make sure user name, email, and password are filled in.",
+                    Toast.LENGTH_LONG).show()
             enableSpinner(false)
         }
-
-
     }
 
     private fun errorToast() {

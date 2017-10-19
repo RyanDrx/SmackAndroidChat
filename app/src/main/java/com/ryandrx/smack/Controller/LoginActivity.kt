@@ -61,7 +61,7 @@ class LoginActivity : AppCompatActivity() {
         if (email.isNotEmpty() && password.isNotEmpty()) {
             AuthService.loginUser(email, password) { loginSuccess ->
                 if (loginSuccess) {
-                    AuthService.findUserbyEmail(this) { findSuccess ->
+                    AuthService.findUserByEmail(this) { findSuccess ->
                         if (findSuccess) {
                             enableSpinner(false)
                             finish()

@@ -1,8 +1,8 @@
 package com.ryandrx.smack.Utilities
 
 
-const val BASE_URL = "https://hidden-ridge-54024.herokuapp.com/v1/"
-const val SOCKET_URL = "https://hidden-ridge-54024.herokuapp.com/"
+const val BASE_URL = "https://quiet-earth-17667.herokuapp.com/v1/"
+const val SOCKET_URL = "https://quiet-earth-17667.herokuapp.com/"
 const val URL_REGISTER = "${BASE_URL}account/register"
 const val URL_LOGIN = "${BASE_URL}account/login"
 const val URL_CREATE_USER = "${BASE_URL}user/add"

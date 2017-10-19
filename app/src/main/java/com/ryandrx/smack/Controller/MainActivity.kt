@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         socket.on("messageCreated", onNewMessage)
 
         if (App.prefs.isLoggedIn) {
-            AuthService.findUserbyEmail(this) {}
+            AuthService.findUserByEmail(this) {}
         }
 
     }
