@@ -4,9 +4,6 @@ import android.graphics.Color
 import com.ryandrx.smack.Controller.App
 import java.util.*
 
-/**
- * Created by RyanDrx on 10/6/2017.
- */
 object UserDataService {
     var id = ""
     var avatarColor = ""
@@ -23,6 +20,9 @@ object UserDataService {
         App.prefs.authToken = ""
         App.prefs.userEmail = ""
         App.prefs.isLoggedIn = false
+
+        MessageService.clearMessages()
+        MessageService.clearChannels()
 
     }
 
